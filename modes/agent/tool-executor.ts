@@ -413,6 +413,9 @@ export class ToolExecutor {
         shell: true,
         cwd: this.config.codebasePath,
         encoding: "utf8",
+        env: {
+    ...process.env,
+  },
         maxBuffer: 16 * 1024 * 1024,
       });
       if (r.status && r.status !== 0)
